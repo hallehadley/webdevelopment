@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Development Project</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #FFF4F2;
+            color: #333333;
+            padding: 20px 40px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        nav ul li.divider {
+            border-left: 2px solid #555;
+            height: 30px;
+            margin: 0 15px;
+        }
+
+        nav ul li:first-child .divider {
+            display: none;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        section h2 {
+            color: #222;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Button Styling for General Buttons */
+        button {
+            background-color: #ff758c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff7eb3;
+        }
+
+        /* About Me Image Styling */
+        .about-container img {
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        /* Interests Section Styles */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .interest-item {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .interest-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .interest-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .interest-item p {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        /* Vacation Section Styles */
+        .vacation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .vacation-item {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .vacation-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .vacation-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .vacation-text p {
+            color: #222;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Back to Top Button Styling */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff758c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #ff7eb3;
+            transform: translateY(-5px);
+        }
+
+        #backToTopBtn:active {
+            transform: translateY(2px);
+        }
+
+        /* Three divs styling */
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .content-div {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 30%;
+        }
+
+        .content-div img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Web Development Project</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#section1">About Me</a></li>
+            <li class="divider"></li>
+            <li><a href="#section2">JavaScript Demo</a></li>
+            <li class="divider"></li>
+            <li><a href="#section3">Interests</a></li>
+            <li class="divider"></li>
+            <li><a href="#section5">Vacations</a></li>
+            <li class="divider"></li>
+            <li><a href="#section6">Joke Generator</a></li>
+            <li class="divider"></li>
+            <li><a href="#section7">My Resume</a></li> <!-- Updated link to section7 -->
+        </ul>
+    </nav>
+
+    <section id="section1">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <p>Hi! I'm Halle Hadley, a sophomore at Brigham Young University. I hope to study communications with a sports media emphasis! I'm excited to see where my time at BYU will take me!</p>
+            <img src="../Final/Me.png" alt="Halle Hadley">
+        </div>
+    </section>
+
+    <section id="section2">
+        <h2>JavaScript Demo</h2>
+        <p>This section demonstrates JavaScript interactivity. Try clicking the buttons below:</p>
+        <button onclick="showMessage()">Click Me for a Message</button>
+        <button onclick="changeBackgroundColor()">Change Background Color</button>
+    
+        <!-- Embed Tableau visualization -->
+        <h3>Player Visualization</h3>
+        <div class='tableauPlaceholder' id='viz1733986367984' style='position: relative'>
+            <noscript><a href='#'><img alt='PlayerViz ' src='https://public.tableau.com/static/images/Jo/JordanCareerScoring/PlayerViz/1_rss.png' style='border: none' /></a></noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='JordanCareerScoring/PlayerViz' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/Jo/JordanCareerScoring/PlayerViz/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1733986367984');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width='1600px';vizElement.style.height='1417px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </section>
+    
+
+    <!-- Three Divs for Content -->
+    <div class="content-container">
+        <div class="content-div">
+            <h3>Favorite Movie</h3>
+            <img src="../Final/Creed final.jpeg" alt="Favorite Movie">
+            <p>Creed featuring Michael B. Jordan is my favorite movie of all time.</p>
+        </div>
+        <div class="content-div">
+            <h3>Favorite Ice Cream Flavor</h3>
+            <img src="../Final/Tillamook.jpg" alt="Favorite Ice Cream">
+            <p>My favorite ice cream flavor has to be Tillamook Oregon Strawberry!</p>
+        </div>
+        <div class="content-div">
+            <h3>Favorite Temple</h3>
+            <img src="../Final/Temple.jpg" alt="Favorite Temple">
+            <p>The Layton, Utah temple is my favorite temple!</p>
+        </div>
+    </div>
+
+    <section id="section3">
+        <h2>Interests</h2>
+        <div class="interests-grid">
+            <div class="interest-item">
+                <img src="../Final/Basketball.png" alt="Playing Sports">
+                <p>Playing sports</p>
+            </div>
+            <div class="interest-item">
+                <img src="../Final/Sushi.png" alt="Sushi">
+                <p>Sushi</p>
+            </div>
+            <div class="interest-item">
+                <img src="../Final/Florida_Travel.png" alt="Traveling">
+                <p>Traveling and exploring new places</p>
+            </div>
+            <div class="interest-item">
+                <img src="../Final/River.png" alt="Outdoors">
+                <p>Anything outdoors</p>
+            </div>
+            <div class="interest-item">
+                <img src="../Final/Sundance_Skiing.png" alt="Skiing">
+                <p>Skiing</p>
+            </div>
+            <div class="interest-item">
+                <img src="../Final/LSU_Image.jpg" alt="College Football">
+                <p>College Football (Geaux Tigers)</p>
+            </div>
+            <div class="interest-item">
+                <img src="../Final/Pickleball.png" alt="Pickleball">
+                <p>Pickleball</p>
+            </div>
+            <div class="interest-item">
+                <img src="../Final/Hunting.png" alt="Hunting">
+                <p>Hunting</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="section4">
+        <h2>Embedded YouTube Video</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Lz2EWAyw0Bc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="section5">
+        <h2>My Favorite Vacation Spots</h2>
+        <div class="vacation-grid">
+            <div class="vacation-item">
+                <img src="../Final/New_York.png" alt="New York">
+                <div class="vacation-text">
+                    <p>New York</p>
+                </div>
+            </div>
+            <div class="vacation-item">
+                <img src="../Final/Hawaii.png" alt="Hawaii">
+                <div class="vacation-text">
+                    <p>Hawaii</p>
+                </div>
+            </div>
+            <div class="vacation-item">
+                <img src="../Final/Yellowstone.png" alt="Yellowstone">
+                <div class="vacation-text">
+                    <p>Yellowstone</p>
+                </div>
+            </div>
+            <div class="vacation-item">
+                <img src="../Final/Niagara_Falls.png" alt="Niagara Falls">
+                <div class="vacation-text">
+                    <p>Niagara Falls</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section6">
+        <h2>Joke Generator</h2>
+        <button onclick="generateJoke()">Generate Joke</button>
+        <p id="joke"></p>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="section7">
+        <h2>My Resume</h2>
+        <p>Click the button below to view my resume.</p>
+        <a href="../Final/resume.html" target="_blank">
+            <button>View My Resume</button>
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Halle Hadley. All Rights Reserved.</p>
+    </footer>
+
+    <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
+
+    <script>
+        // JavaScript for the interactive functionality
+        function showMessage() {
+            alert("Hello, welcome to my website!");
+        }
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = "#e0f7fa";
+        }
+
+        function generateJoke() {
+            fetch('https://official-joke-api.appspot.com/random_joke')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("joke").textContent = data.setup + " - " + data.punchline;
+                });
+        }
+
+        // Scroll to top functionality
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById("backToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("backToTopBtn").style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
