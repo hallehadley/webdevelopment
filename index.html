@@ -268,7 +268,7 @@
         <h2>About Me</h2>
         <div class="about-container">
             <p>Hi! I'm Halle Hadley, a sophomore at Brigham Young University. I hope to study communications with a sports media emphasis! I'm excited to see where my time at BYU will take me!</p>
-            <img src="../Final/Me.png" alt="Halle Hadley">
+            <img src="Me.png" alt="Halle Hadley">
         </div>
     </section>
 
@@ -313,17 +313,17 @@
     <div class="content-container">
         <div class="content-div">
             <h3>Favorite Movie</h3>
-            <img src="../Final/Creed final.jpeg" alt="Favorite Movie">
+            <img src="Creed final.jpeg" alt="Favorite Movie">
             <p>Creed featuring Michael B. Jordan is my favorite movie of all time.</p>
         </div>
         <div class="content-div">
             <h3>Favorite Ice Cream Flavor</h3>
-            <img src="../Final/Tillamook.jpg" alt="Favorite Ice Cream">
+            <img src="Tillamook.jpg" alt="Favorite Ice Cream">
             <p>My favorite ice cream flavor has to be Tillamook Oregon Strawberry!</p>
         </div>
         <div class="content-div">
             <h3>Favorite Temple</h3>
-            <img src="../Final/Temple.jpg" alt="Favorite Temple">
+            <img src="Temple.jpg" alt="Favorite Temple">
             <p>The Layton, Utah temple is my favorite temple!</p>
         </div>
     </div>
@@ -332,35 +332,35 @@
         <h2>Interests</h2>
         <div class="interests-grid">
             <div class="interest-item">
-                <img src="../Final/Basketball.png" alt="Playing Sports">
+                <img src="Basketball.png" alt="Playing Sports">
                 <p>Playing sports</p>
             </div>
             <div class="interest-item">
-                <img src="../Final/Sushi.png" alt="Sushi">
+                <img src="Sushi.png" alt="Sushi">
                 <p>Sushi</p>
             </div>
             <div class="interest-item">
-                <img src="../Final/Florida_Travel.png" alt="Traveling">
+                <img src="Florida_Travel.png" alt="Traveling">
                 <p>Traveling and exploring new places</p>
             </div>
             <div class="interest-item">
-                <img src="../Final/River.png" alt="Outdoors">
+                <img src="River.png" alt="Outdoors">
                 <p>Anything outdoors</p>
             </div>
             <div class="interest-item">
-                <img src="../Final/Sundance_Skiing.png" alt="Skiing">
+                <img src="Sundance_Skiing.png" alt="Skiing">
                 <p>Skiing</p>
             </div>
             <div class="interest-item">
-                <img src="../Final/LSU_Image.jpg" alt="College Football">
+                <img src="LSU_Image.jpg" alt="College Football">
                 <p>College Football (Geaux Tigers)</p>
             </div>
             <div class="interest-item">
-                <img src="../Final/Pickleball.png" alt="Pickleball">
+                <img src="Pickleball.png" alt="Pickleball">
                 <p>Pickleball</p>
             </div>
             <div class="interest-item">
-                <img src="../Final/Hunting.png" alt="Hunting">
+                <img src="Hunting.png" alt="Hunting">
                 <p>Hunting</p>
             </div>
         </div>
@@ -374,31 +374,19 @@
     </section>
 
     <section id="section5">
-        <h2>My Favorite Vacation Spots</h2>
+        <h2>Vacations</h2>
         <div class="vacation-grid">
             <div class="vacation-item">
-                <img src="../Final/New_York.png" alt="New York">
-                <div class="vacation-text">
-                    <p>New York</p>
-                </div>
+                <img src="Hawaii Vacation.jpg" alt="Hawaii Vacation">
+                <p>Vacation in Hawaii</p>
             </div>
             <div class="vacation-item">
-                <img src="../Final/Hawaii.png" alt="Hawaii">
-                <div class="vacation-text">
-                    <p>Hawaii</p>
-                </div>
+                <img src="Europe_travel.jpg" alt="Europe Travel">
+                <p>Traveling around Europe</p>
             </div>
             <div class="vacation-item">
-                <img src="../Final/Yellowstone.png" alt="Yellowstone">
-                <div class="vacation-text">
-                    <p>Yellowstone</p>
-                </div>
-            </div>
-            <div class="vacation-item">
-                <img src="../Final/Niagara_Falls.png" alt="Niagara Falls">
-                <div class="vacation-text">
-                    <p>Niagara Falls</p>
-                </div>
+                <img src="Disneyland.jpg" alt="Disneyland">
+                <p>Trip to Disneyland</p>
             </div>
         </div>
     </section>
@@ -409,11 +397,10 @@
         <p id="joke"></p>
     </section>
 
-    <!-- Resume Section -->
     <section id="section7">
         <h2>My Resume</h2>
         <p>Click the button below to view my resume.</p>
-        <a href="../Final/resume.html" target="_blank">
+        <a href="Final/resume.html" target="_blank">
             <button>View My Resume</button>
         </a>
     </section>
@@ -425,34 +412,32 @@
     <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
 
     <script>
-        // JavaScript for the interactive functionality
+        // JavaScript functions go here
         function showMessage() {
-            alert("Hello, welcome to my website!");
+            alert('Hello! Thanks for clicking the button.');
         }
 
         function changeBackgroundColor() {
-            document.body.style.backgroundColor = "#e0f7fa";
+            document.body.style.backgroundColor = '#dfe4ea';
         }
 
-        function generateJoke() {
-            fetch('https://official-joke-api.appspot.com/random_joke')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("joke").textContent = data.setup + " - " + data.punchline;
-                });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Scroll to top functionality
-        window.onscroll = function() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                document.getElementById("backToTopBtn").style.display = "block";
+        window.onscroll = function () {
+            var backToTopBtn = document.getElementById('backToTopBtn');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "block";
             } else {
-                document.getElementById("backToTopBtn").style.display = "none";
+                backToTopBtn.style.display = "none";
             }
         };
 
-        function scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+        function generateJoke() {
+            // Example joke API fetch here
+            const joke = "Why don't skeletons fight each other? They don't have the guts!";
+            document.getElementById("joke").innerText = joke;
         }
     </script>
 </body>
